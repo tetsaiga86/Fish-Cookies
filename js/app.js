@@ -4,6 +4,7 @@ var pike = {
   maxCust: 88,
   avgPerSale: 5.2,
   location: 'Pike Place',
+  dailyTotal: 0,
   customers: function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
@@ -20,6 +21,7 @@ for (var i = 0; i < 15; i++) {
 
 for (var i = 0; i < 15; i++){
   pike.hourlyCookies.push(pike.totalCookiesPerHour(i));
+  pike.dailyTotal += pike.hourlyCookies[i];
 };
 
 for (var i = 0; i < 15; i++){
@@ -28,11 +30,16 @@ for (var i = 0; i < 15; i++){
   pikeTime.appendChild(time);
 };
 
+var pikTotal = document.createElement('li');
+pikTotal.textContent = 'total= ' + pike.dailyTotal;
+pikeTime.appendChild(pikTotal);
+
 var SeaTac = {
   minCust: 6,
   maxCust: 24,
   avgPerSale: 1.2,
   location: 'SeaTac Airport',
+  dailyTotal: 0,
   customers: function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
@@ -49,6 +56,7 @@ for (var i = 0; i < 15; i++) {
 
 for (var i = 0; i < 15; i++){
   SeaTac.hourlyCookies.push(SeaTac.totalCookiesPerHour(i));
+  SeaTac.dailyTotal += SeaTac.hourlyCookies[i];
 };
 
 for (var i = 0; i < 15; i++){
@@ -57,11 +65,16 @@ for (var i = 0; i < 15; i++){
   SeatacTime.appendChild(time);
 };
 
+var SeaTacTotal = document.createElement('li');
+SeaTacTotal.textContent = 'total= ' + SeaTac.dailyTotal;
+SeatacTime.appendChild(SeaTacTotal);
+
 var SouthCenter = {
   minCust: 11,
   maxCust: 38,
   avgPerSale: 1.9,
   location: 'SouthCenter',
+  dailyTotal: 0,
   customers: function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
@@ -78,6 +91,7 @@ for (var i = 0; i < 15; i++) {
 
 for (var i = 0; i < 15; i++){
   SouthCenter.hourlyCookies.push(SouthCenter.totalCookiesPerHour(i));
+  SouthCenter.dailyTotal += SouthCenter.hourlyCookies[i];
 };
 
 for (var i = 0; i < 15; i++){
@@ -86,11 +100,16 @@ for (var i = 0; i < 15; i++){
   SouthTime.appendChild(time);
 };
 
+var SouthCenterTotal = document.createElement('li');
+SouthCenterTotal.textContent = 'total= ' + SouthCenter.dailyTotal;
+SouthTime.appendChild(SouthCenterTotal);
+
 var Bellevue = {
   minCust: 20,
   maxCust: 48,
   avgPerSale: 3.3,
   location: 'Bellevue Square',
+  dailyTotal: 0,
   customers: function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
@@ -107,6 +126,7 @@ for (var i = 0; i < 15; i++) {
 
 for (var i = 0; i < 15; i++){
   Bellevue.hourlyCookies.push(Bellevue.totalCookiesPerHour(i));
+  Bellevue.dailyTotal += Bellevue.hourlyCookies[i];
 };
 
 for (var i = 0; i < 15; i++){
@@ -115,11 +135,16 @@ for (var i = 0; i < 15; i++){
   BellevueTime.appendChild(time);
 };
 
+var BellevueTotal = document.createElement('li');
+BellevueTotal.textContent = 'total= ' + Bellevue.dailyTotal;
+BellevueTime.appendChild(BellevueTotal);
+
 var Alki = {
   minCust: 3,
   maxCust: 24,
   avgPerSale: 2.6,
   location: 'Alki',
+  dailyTotal: 0,
   customers: function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
@@ -136,6 +161,7 @@ for (var i = 0; i < 15; i++) {
 
 for (var i = 0; i < 15; i++){
   Alki.hourlyCookies.push(Alki.totalCookiesPerHour(i));
+  Alki.dailyTotal += Alki.hourlyCookies[i];
 };
 
 for (var i = 0; i < 15; i++){
@@ -143,3 +169,7 @@ for (var i = 0; i < 15; i++){
   time.textContent = storeHours[i] + ' - ' + Alki.hourlyCookies[i];
   AlkiTime.appendChild(time);
 };
+
+var AlkiTotal = document.createElement('li');
+AlkiTotal.textContent = 'total= ' + Alki.dailyTotal;
+AlkiTime.appendChild(AlkiTotal);
