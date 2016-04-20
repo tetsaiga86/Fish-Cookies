@@ -1,5 +1,5 @@
 var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
-var newLocation = [];
+var allStores = [];
 var appendRows = document.getElementById('append-rows');
 
 function Store(location,min,max,avgPerSale) {
@@ -29,37 +29,49 @@ function totalCookiesPerHour(hourlyCustomers, avgPerSale) {
 };
 
 function time() {
+  var tr = document.createElement('tr');
+  var empty = document.createElement('td');
+  tr.appendChild(empty);
   for (var i = 0; i < storeHours.length; i++) {
     var th = document.createElement('th');
     th.textContent = storeHours[i];
-    appendRows.appendChild(th);
+    tr.appendChild(th);
   }
+  var totalCookie = document.createElement('th');
+  totalCookie.textContent = 'Total';
+  tr.appendChild(totalCookie);
+  appendRows.appendChild(tr);
 }
 
-function data(Store) {
-  for (var i = 0; i < Store.hourlyCookies.length; i++) {
-    var tr = document.createElement('tr');
+function data(store) {
+  var tr = document.createElement('tr');
+  var nameCell = document.createElement('td');
+  nameCell.textContent = store.storeLocation;
+  tr.appendChild(nameCell);
+  for (var i = 0; i < store.hourlyCookies.length; i++) {
     var td = document.createElement('td');
-    td.textContent = Store.storeLocation;
-    tr.textContent = Store.hourlyCookies[i];
+    td.textContent = store.hourlyCookies[i];
     tr.appendChild(td);
-    appendRows.appendChild(tr);
-  }
+  };
+  var total = document.createElement('td');
+  total.textContent = store.dailyTotal;
+  tr.appendChild(total);
+  appendRows.appendChild(tr);
 }
 
 // for (i = 0; i < storeHours.length; i++) {
 //   time(Store[i]);
 // }
 
-newLocation.push(new Store('Pike Place',17,88,5.2));
-newLocation.push(new Store('SeaTac Airport',6,24,1.2));
-newLocation.push(new Store('Southcenter',11,38,1.9));
-newLocation.push(new Store('Bellevue',20,48,3.3));
-newLocation.push(new Store('Alki',3,24,2.6));
+allStores.push(new Store('Pike Place',17,88,5.2));
+allStores.push(new Store('SeaTac Airport',6,24,1.2));
+allStores.push(new Store('Southcenter',11,38,1.9));
+allStores.push(new Store('Bellevue',20,48,3.3));
+allStores.push(new Store('Alki',3,24,2.6));
 
 time();
-for (i = 0; i < newLocation.length; i++) {
-  data(newLocation[i]);
+for (i = 0; i < allStores.length; i++) {
+  data(allStores[i]);
 }
   //
   // for (var i = 0; i < 15; i++){
