@@ -65,6 +65,34 @@ allStores.push(new Store('Southcenter',11,38,1.9));
 allStores.push(new Store('Bellevue',20,48,3.3));
 allStores.push(new Store('Alki',3,24,2.6));
 
+var chatList = document.getElementById('submission-form');
+var moreStores = [];
+chatList.addEventListener('submit', handleSubmit);
+// var renderMoreStores = function() {
+//   chatList.innerHTML = ' ';
+//   for (var i = 0; i < moreStores.length; i++) {
+//     chatList.appendChild(moreStores[i].render());
+//   }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  var formName = event.target.where.value;
+  var formMin = event.target.min.value;
+  var formMax = event.target.max.value;
+  var formAvg = event.target.avg.value;
+
+  var formStore = new Store(formName,formMin,formMax,formAvg);
+
+  event.target.where.value = null;
+  event.target.min.value = null;
+  event.target.max.value = null;
+  event.target.avg.value = null;
+
+  data(formStore);
+  allStores.push(formStore);
+  //renderMoreStores();
+};
+
 time();
 for (i = 0; i < allStores.length; i++) {
   data(allStores[i]);
