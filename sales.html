@@ -2,13 +2,34 @@
 <html>
   <head>
     <title></title>
-    
+
   </head>
   <body>
     <header>
     </header>
-      <table id="append-rows"></table>
+      <body>
+        <form id="submission-form">
+          <fieldset>
+          <legend>Enter Information</legend>
 
+            <label for="where">Location
+            <input name="where" type=text size=10></input>
+
+            <label for="min">Minimum
+            <input name="min" type=text size=10px></input>
+
+            <label for="max">Maximum
+            <input name="max" type=text size=10px></input>
+
+            <label for="avg">Averge
+            <input name="avg" type=text size=10></input>
+
+            <button type="submit">Submit</button>
+
+          </fieldset>
+        </form>
+
+        <table id="append-rows"></table>
     <footer>
     </footer>
     <script src="js/app.js"></script>
