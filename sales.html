@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-
+    <title>Sales</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/salesstyle.css" type="text/css">
   </head>
       <body>
         <form id="submission-form">
@@ -10,7 +12,7 @@
           <legend>Enter Information</legend>
 
             <label for="where">Location
-            <input name="where" type=text size=10></input>
+            <input name="where" type=text size=10px></input>
 
             <label for="min">Minimum
             <input name="min" type=text size=10px></input>
@@ -19,13 +21,14 @@
             <input name="max" type=text size=10px></input>
 
             <label for="avg">Average
-            <input name="avg" type=text size=10></input>
+            <input name="avg" type=text size=10px></input>
 
             <button type="submit">Submit</button>
 
           </fieldset>
         </form>
-        <table id="append-rows"></table>
+        <table class="center" id="append-rows"></table>
+        <a href="index.html">Home</a>
     <script src="js/app.js"></script>
   </body>
 </html>

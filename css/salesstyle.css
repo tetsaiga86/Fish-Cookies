@@ -1,0 +1,28 @@
+*{
+  background-color: rgb(222, 237, 230);
+  text-align: center;
+}
+
+fieldset{
+   border-style: groove;
+   border-radius: 50px;
+   border-width: thick;
+   border-color: black;
+   display: inline;
+ }
+
+label, input, button{
+  display: inline;
+  padding-left:18px;
+  padding-right: 18px;
+  text-align: center;
+}
+
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+  border-style: groove;
+  border-radius: 50px;
+  border-width: thick;
+  border-color: black;
+}
