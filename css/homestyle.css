@@ -1,0 +1,95 @@
+*{
+}
+.content{
+  width: 80%;
+}
+body{
+  background-image: url(../img/fish.jpg);
+}
+
+.about{
+  background-image: url(../img/family.jpg);
+  max-width: 780px;
+  min-height: 460px;
+  border-style: ridge;
+  border-color: black;
+  border-width: medium;
+}
+
+p{
+  padding: 5px 15px 15px 15px;
+}
+
+.title{
+  align-content: right;
+  border-style: groove;
+  border-width: thick;
+  border-color: black;
+  background-color: rgb(245, 77, 161);
+  opacity: 1;
+  width: 50%;
+  font-style: italic;
+  font-size: 74px;
+  font-family: 'Pacifico', cursive;
+  position:fixed;
+  margin-top: 280px;
+  margin-left: 80%;
+  height: 450px;
+  width: 300px;
+}
+
+h2{
+  text-align: center;
+  border-style: groove;
+  border-width: thick;
+  border-color: black;
+  background-color: rgb(245, 77, 161);
+  opacity: 1;
+  font-style: italic;
+  font-size: 74px;
+  font-family: 'Pacifico', cursive;
+}
+
+.frosted{
+  margin-top: 60px;
+  margin-left: 32%;
+  width: 500px;
+  height: 200px;
+}
+
+.table, .event, .cater, .locations{
+  text-align: center;
+  border-style: groove;
+  border-width: thick;
+  border-color: black;
+  background-color: rgb(245, 77, 161);
+  opacity: 1;
+  font-style: italic;
+  font-size: 74px;
+  font-family: 'Pacifico', cursive;
+}
+
+ .logo{
+   padding-left: 10%;
+   border-style: groove;
+   border-width: thick;
+   border-color: black;
+   background-color: rgb(245, 77, 161);
+ }
+ .fish1, .fish2, .cookie{
+   width: 500px;
+   height: 200px;
+   padding:5px 0px 0px 0px;
+ }
+
+ .fish2{
+   -moz-transform: scaleX(-1);
+   -o-transform: scaleX(-1);
+   -webkit-transform: scaleX(-1);
+   transform: scaleX(-1);
+   filter: FlipH;
+   -ms-filter: "FlipH";
+ }
+ .object{
+   padding-left: 25%;
+ }
