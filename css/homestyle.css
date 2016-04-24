@@ -20,6 +20,21 @@ p{
   padding: 5px 15px 15px 15px;
 }
 
+#top{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-style: groove;
+  border-width: thick;
+  border-color: black;
+  background-color: rgb(245, 77, 161);
+  opacity: 1;
+  font-style: italic;
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+  list-style: none;
+}
+
 .title{
   align-content: right;
   border-style: groove;
@@ -49,6 +64,7 @@ h2{
   font-size: 74px;
   font-family: 'Pacifico', cursive;
 }
+
 
 .frosted{
   margin-top: 60px;
@@ -93,3 +109,6 @@ h2{
  .object{
    padding-left: 25%;
  }
+footer{
+  max-width: 80%;
+}
