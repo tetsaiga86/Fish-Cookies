@@ -106,9 +106,19 @@ h2{
    filter: FlipH;
    -ms-filter: "FlipH";
  }
+
  .object{
    padding-left: 25%;
  }
+
 footer{
   max-width: 80%;
+}
+
+#list{
+  font-size: 30px;
+  list-style: none;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
