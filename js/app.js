@@ -20,6 +20,14 @@ function Store(location,min,max,avgPerSale) {
   };
 };
 
+function findStoreRow(storeLocation){
+  for (var i = 1; i < appendRows.children.length; i++) {
+    if (appendRows.children[i].children[0].textContent === storeLocation){
+      return appendRows.children[i];
+    }
+  }
+}
+
 function avgCustomer(min,max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -43,7 +51,7 @@ function time() {
   appendRows.appendChild(tr);
 }
 
-function data(store) {
+function data(store, replace) {
   var tr = document.createElement('tr');
   var nameCell = document.createElement('td');
   nameCell.textContent = store.storeLocation;
@@ -56,7 +64,11 @@ function data(store) {
   var total = document.createElement('td');
   total.textContent = store.dailyTotal;
   tr.appendChild(total);
-  appendRows.appendChild(tr);
+  if(replace){
+    appendRows.replaceChild(tr,replace);
+  }else{
+    appendRows.appendChild(tr);
+  }
 }
 
 allStores.push(new Store('Pike Place',17,88,5.2));
@@ -68,11 +80,6 @@ allStores.push(new Store('Alki',3,24,2.6));
 var chatList = document.getElementById('submission-form');
 var moreStores = [];
 chatList.addEventListener('submit', handleSubmit);
-// var renderMoreStores = function() {
-//   chatList.innerHTML = ' ';
-//   for (var i = 0; i < moreStores.length; i++) {
-//     chatList.appendChild(moreStores[i].render());
-//   }
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -87,10 +94,17 @@ function handleSubmit(event) {
   event.target.min.value = null;
   event.target.max.value = null;
   event.target.avg.value = null;
-
-  data(formStore);
-  allStores.push(formStore);
-  //renderMoreStores();
+  if (findStoreRow(formName)) {
+    for (var i = 0; i < allStores.length; i++) {
+      if (allStores[i].storeLocation === formName){
+        allStores[i] = formStore;
+        data(formStore,findStoreRow(formName));
+      }
+    }
+  }else {
+    data(formStore);
+    allStores.push(formStore);
+  }
 };
 
 time();
